@@ -1,0 +1,3 @@
+rootProject.name = 'example'
+include 'GooglePhotosForJava'
+project(':GooglePhotosForJava').projectDir = file('../')
