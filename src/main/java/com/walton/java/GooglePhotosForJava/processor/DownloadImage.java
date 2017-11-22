@@ -40,7 +40,9 @@ public class DownloadImage implements Mission<PicasawebService>{
                 CreateDownloadFile createDownloadFile = new CreateDownloadFile(downloadPath + albumInfo.getAlbumName());
                 File imageFile = createDownloadFile.execute(photoInfo.getPhotoName());
                 DownloadData downloadData = new DownloadData(imageFile);
+                System.out.println("Start download "+photoInfo.getPhotoName());
                 downloadData.execute(photoInfo.getUrl());
+                System.out.println(photoInfo.getPhotoName()+"download done!");
             }
         }
         return null;

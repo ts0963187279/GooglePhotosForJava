@@ -22,11 +22,8 @@ import java.io.IOException;
 
 public class CreateDownloadFile implements Mission<String> {
     private String path;
-    public CreateDownloadFile(){
-        path = ".";
-    }
     public CreateDownloadFile(String path){
-        this.path = "./" + path;
+        this.path = path;
         File dir = new File(path);
         if (!dir.exists()) {
             dir.mkdirs();
@@ -34,7 +31,8 @@ public class CreateDownloadFile implements Mission<String> {
     }
     @Override
     public File execute(String fileName){
-        File file = new File(path + "/" + fileName);
+        System.out.println(path +"/"+ fileName);
+        File file = new File(path +"/"+ fileName);
         try {
             file.createNewFile();
         } catch (IOException e) {

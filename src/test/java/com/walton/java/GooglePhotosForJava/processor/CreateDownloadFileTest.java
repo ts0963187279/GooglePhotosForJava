@@ -9,12 +9,12 @@ import java.io.IOException;
 public class CreateDownloadFileTest {
     @Test
     public void testExecute() throws IOException {
-        CreateDownloadFile createDownloadFile = new CreateDownloadFile();
+        CreateDownloadFile createDownloadFile = new CreateDownloadFile("./");
         File expected = new File("./test");
         Assert.assertEquals(expected,createDownloadFile.execute("test"));
         expected.delete();
         expected = new File("./test/test");
-        createDownloadFile = new CreateDownloadFile("test");
+        createDownloadFile = new CreateDownloadFile("./test/");
         Assert.assertEquals(expected,createDownloadFile.execute("test"));
     }
 }
