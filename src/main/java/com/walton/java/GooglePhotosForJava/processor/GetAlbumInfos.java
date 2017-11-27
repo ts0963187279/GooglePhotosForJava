@@ -81,7 +81,7 @@ public class GetAlbumInfos implements Mission<PicasawebService>{
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ResourceNotFoundException e){
-            System.out.println("User Name invalid");
+            e.printStackTrace();
             File file = new File("./RefreshTokenStorage.dat");
             file.delete();
         } catch (ServiceException e) {
