@@ -6,10 +6,14 @@ sourceCompatibility = 1.6
 
 repositories {
     mavenCentral()
+	maven{
+		url "https://dl.bintray.com/poisondog/poisondog"
+	}
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+	compile group: 'poisondog', name: 'poisondog.core', version: '1.0.5'
     compile group: 'com.google.gdata', name: 'core', version: '1.47.1'
     compile group: 'com.google.apis', name: 'google-api-services-oauth2', version: 'v2-rev129-1.22.0'
     testCompile 'junit:junit:4.+'
